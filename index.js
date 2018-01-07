@@ -34,13 +34,14 @@ function distanceTravelledInFeet(num1, num2) {
 // ReferenceError: distanceTravelledInFeet is not defined
 //     at Context.<anonymous> (test/indexTest.js:42:7)
 function calculatesFarePrice(start, destination) {
-  if (distanceTravelledInFeet(start, destination) > 2400) {
+  let total = distanceTravelledInFeet(start, destination);
+  if (total > 2400) {
       return 'cannot travel that far';
-  } else if (distanceTravelledInFeet(start, destination) > 400 && distanceTravelledInFeet(start, destination) < 2000) {
-      return distanceTravelledInFeet(start, destination) * 0.02;
-  } else if (distanceTravelledInFeet(start, destination) > 2000) {
+  } else if (total > 400 && total < 2000) {
+      return total * 0.02;
+  } else if (total > 2000) {
       return 25;
-  } else if (distanceTravelledInFeet(start, destination) < 400) {
+  } else if (total < 400) {
       return 0;
   }
 }
